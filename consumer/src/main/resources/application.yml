@@ -18,3 +18,14 @@ logging:
   pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%18.18t]){yellow} %clr(:){red} %clr(%m){faint}%n"
   level:
     org.springframework.kafka: debug
+
+app.in.topic: ${TOPIC:info}
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${MANAGEMENT_OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
