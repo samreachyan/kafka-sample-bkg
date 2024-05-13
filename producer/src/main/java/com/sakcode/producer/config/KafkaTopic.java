@@ -19,4 +19,9 @@ public class KafkaTopic {
         return TopicBuilder.name("topic-2").build();
     }
 
+    @Bean
+    public NewTopic topic3() {
+        return TopicBuilder.name("push_telegram").build();
+    }
+
 }
